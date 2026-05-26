@@ -33,6 +33,11 @@ db.run(`
 
 
 // INSERTAR DATOS
+app.get('/', (req, res) => {
+
+    res.send('API de peliculas funcionando correctamente');
+
+});
 db.run(`
     INSERT INTO peliculas(titulo, genero, anio)
 
@@ -97,10 +102,7 @@ app.get('/peliculas', verificarToken, (req, res) => {
 
 
 // SERVIDOR
-app.listen(3000, () => {
 
-    console.log('Servidor corriendo en puerto 3000');
-});
 app.post('/login', (req, res) => {
 
     const { usuario, password } = req.body;
